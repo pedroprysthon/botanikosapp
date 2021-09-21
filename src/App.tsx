@@ -1,15 +1,8 @@
 import React from "react";
-import Header from "./components/header";
-import NavBar from "./components/NavBar";
-import TransactionsList from "./components/TransactionsList";
+import Routes from "./routes";
 
 function App() {
-  return (
-    <div className="App">
-      <Header />
-      <NavBar />
-      <TransactionsList />
-    </div>
-  );
+  return <Routes />;
 }
+
 export default App;
