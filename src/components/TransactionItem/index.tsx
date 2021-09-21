@@ -9,6 +9,7 @@ import {
   LightLabel,
   IconWrapper,
   Received,
+  Currency,
 } from "./styles";
 
 interface TransactionItemProps {
@@ -23,7 +24,10 @@ const TransactionItem: React.FC<TransactionItemProps> = ({ item }) => {
       <Content>
         <Divider>
           <Label>{item.title} </Label>
-          <Label>{item.currency}</Label>
+          <Currency isPayment={item.type === "payment"}>
+            {item.type === "payment" ? "- " : ""}
+            {item.currency}
+          </Currency>
         </Divider>
         <Divider>
           <LightLabel>{item.date}</LightLabel>

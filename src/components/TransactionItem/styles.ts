@@ -2,6 +2,10 @@ import styled from "styled-components";
 import { HiCurrencyDollar } from "react-icons/hi";
 import { MdPayment } from "react-icons/md";
 
+interface isPaymentType {
+  isPayment: boolean;
+}
+
 export const Container = styled.li`
   margin: 0 10px;
   display: flex;
@@ -20,10 +24,7 @@ export const Content = styled.div`
   border-bottom: 1px solid #ddd;
 `;
 
-interface IconWrapperProps {
-  isPayment: boolean;
-}
-export const IconWrapper = styled.div<IconWrapperProps>`
+export const IconWrapper = styled.div<isPaymentType>`
   padding: 10px;
   display: flex;
   justify-content: center;
@@ -36,6 +37,10 @@ export const Label = styled.div`
   font-size: 0.9rem;
   font-weight: bold;
   color: #777;
+`;
+
+export const Currency = styled.div<isPaymentType>`
+  color: ${(props) => (props.isPayment ? "#d45151" : "#369679")};
 `;
 
 export const Divider = styled.div`
